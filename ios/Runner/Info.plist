@@ -47,5 +47,15 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+    <key>NSCameraUsageDescription</key>
+	<string>Autorisez l&apos;accès a votre camera afin de pouvoir télécharger des photos pour votre profile.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Veuillez partager votre localisation pour une meilleure proposition des conducteurs disponible dans votre localité</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Veuillez partager votre localisation pour une meilleure proposition des conducteurs disponible dans votre localité</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Veuillez partager votre localisation pour une meilleure proposition des conducteurs disponible dans votre localité</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Autorisez l&apos;accès aux photos pour télécharger des photos de votre profile.</string>
 </dict>
 </plist>

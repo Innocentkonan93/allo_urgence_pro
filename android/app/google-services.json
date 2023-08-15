@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691217839484",
+    "project_id": "allourgencepro",
+    "storage_bucket": "allourgencepro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691217839484:android:35e9fe20d07039c805e0f9",
+        "android_client_info": {
+          "package_name": "com.creativegroup.allo_urgence_pro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691217839484-egdk8o4qg9c8ucfq8cgpms4chlrv2hlc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzm_UC8uk1U00pivk2FMq-BVvt2JmEy64"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691217839484-egdk8o4qg9c8ucfq8cgpms4chlrv2hlc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

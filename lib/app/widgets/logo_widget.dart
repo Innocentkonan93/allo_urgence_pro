@@ -1,7 +1,4 @@
-
 import 'package:flutter/material.dart';
-
-import '../configs/app_colors.dart';
 
 class LogoWidget extends StatelessWidget {
   const LogoWidget({
@@ -10,10 +7,13 @@ class LogoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 100,
-      width: 100,
-      decoration: const BoxDecoration(color: AppColors.grey),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.asset(
+        "assets/images/logo.png",
+        height: 120,
+        width: 120,
+      ),
     );
   }
 }

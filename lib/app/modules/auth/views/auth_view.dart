@@ -1,3 +1,4 @@
+import 'package:allo_urgence_pro/app/modules/auth/views/login_view.dart';
 import 'package:allo_urgence_pro/app/modules/auth/views/register_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,7 @@ class AuthView extends GetView<AuthController> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    controller.checkUser();
     return Scaffold(
       appBar: AppBar(),
       body:  SizedBox.expand(
@@ -51,7 +53,9 @@ class AuthView extends GetView<AuthController> {
                 ),
                 const SizedBox(height: 20),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const LoginView());
+                  },
                   style: OutlinedButton.styleFrom(
                       side: const BorderSide(
                     color: AppColors.red,
