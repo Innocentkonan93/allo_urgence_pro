@@ -10,7 +10,7 @@ class IntroductionView extends GetWidget<IntroductionController> {
   const IntroductionView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
 
     return Obx(
       () {

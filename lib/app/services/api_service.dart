@@ -82,7 +82,6 @@ class ApiService {
 
     try {
       final response = await http.get(uri, headers: headers);
-
       if (response.statusCode == 200) {
         final body = jsonDecode(response.body);
 

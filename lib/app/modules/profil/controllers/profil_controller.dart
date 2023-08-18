@@ -4,7 +4,7 @@ import 'package:allo_urgence_pro/app/modules/profil/views/success_viiew.dart';
 import 'package:allo_urgence_pro/app/routes/app_pages.dart';
 import 'package:allo_urgence_pro/app/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -32,6 +32,8 @@ class ProfilController extends GetxController {
   final centerName = "".obs;
   final centerLogo = "".obs;
   final centerContacts = "".obs;
+
+  final secondContact = "".obs;
 
   void placeAutoComplete(String query) async {
     List<String>? response = await apiService.searchPlace(query);
@@ -75,6 +77,38 @@ class ProfilController extends GetxController {
       if (urgenceUpdate != null) {
         Get.offAll(
           () => const SuccessView(),
+        );
+      }
+      isSaving(false);
+    } catch (e) {
+      isSaving(false);
+      print(e);
+    }
+  }
+
+  void updateProfilData() async {
+    isSaving(true);
+    try {
+      UrgenceModel urgence = UrgenceModel(
+        id: currentUrgence.value?.id,
+        idUrgentiste: currentUrgence.value?.idUrgentiste,
+        emailUrgentiste: currentUrgence.value?.emailUrgentiste,
+        logoUrgentiste: currentUrgence.value?.logoUrgentiste,
+        adresse: currentUrgence.value?.adresse,
+        contacts: [currentUrgence.value?.contacts, secondContact].join(','),
+        nameUrgentiste: currentUrgence.value?.nameUrgentiste,
+        symptomes: currentUrgence.value?.symptomes,
+        coordonnees: currentUrgence.value?.coordonnees,
+        updatedAt: DateTime.now(),
+      );
+
+      final UrgenceModel? urgenceUpdate =
+          await urgenceRepository.updateUrgence(urgence);
+      if (urgenceUpdate != null) {
+        ScaffoldMessenger.of(Get.context!).showSnackBar(
+          const SnackBar(
+            content: Text('Profil mis à jour'),
+          ),
         );
       }
       isSaving(false);
